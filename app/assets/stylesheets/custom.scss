@@ -1,0 +1,37 @@
+@import "bootstrap/dist/css/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+.navbar, #sticky-footer {
+  background-color: black !important;
+}
+
+#logo {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+.jumbotron {
+  background: asset-url("cover.jpg") no-repeat center center/cover;
+  height: 425px;
+}
+
+#page-content {
+  flex: 1 0 auto;
+  background-color: #f8f9fa;
+}
+
+#sticky-footer {
+  flex-shrink: none;
+}
