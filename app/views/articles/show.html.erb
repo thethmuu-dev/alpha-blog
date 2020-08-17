@@ -1,13 +1,25 @@
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+<h2 class="text-center my-4"><%= @article.title %></h2>
 
-<p>
-  <strong>Description:</strong>
-  <%= @article.description %>
-</p>
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: 'Are you sure?'} %> |
-<%= link_to 'Back', articles_path %>
+<div class="container">
+    <div class="row mb-4">
+      <div class="col-8 mx-auto">
+        <div class="card rounded-0 border-0 text-center shadow">
+          <div class="card-header bg-white font-italic">
+            by THES
+          </div>
+          <div class="card-body">
+            <div class="card-text text-left"><%= simple_format(@article.description) %></div>
+            <%= link_to "Edit", edit_article_path(@article), class: "btn btn-sm btn-outline-info mr-2" %>
+            <%= link_to "Delete", article_path(@article), method: :delete, class: "btn btn-sm btn-outline-danger mr-2" %>
+          </div>
+          <div class="card-footer text-muted text-sm bg-white">
+            Created <%= time_ago_in_words(@article.created_at) %> ago |
+            Update <%= time_ago_in_words(@article.updated_at) %> ago
+          </div>
+        </div>
+      </div>    
+    </div>
+    <div class="mb-3">
+    <%= link_to '[ Back ]', articles_path %>
+  </div>
+</div>
