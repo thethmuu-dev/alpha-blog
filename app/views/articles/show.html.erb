@@ -1,11 +1,11 @@
-<h2 class="text-center my-4"><%= @article.title %></h2>
+<h3 class="text-center my-4"><%= @article.title %></h3>
 
 <div class="container">
     <div class="row mb-4">
       <div class="col-8 mx-auto">
-        <div class="card rounded-0 border-0 text-center shadow">
+        <div class="card rounded-0 border-0 text-center shadow-sm">
           <div class="card-header bg-white font-italic">
-            by THES
+            by <%= @article.user.username if @article.user %>
           </div>
           <div class="card-body">
             <div class="card-text text-left"><%= simple_format(@article.description) %></div>

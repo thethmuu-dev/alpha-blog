@@ -1,13 +1,13 @@
 
-<h1 class="text-center mt-4">All Articles</h1>
+<h2 class="text-center mt-4 mb-3">All Articles</h2>
 
 <div class="container">
   <% @articles.each do |article| %>
     <div class="row mb-4">
       <div class="col-8 mx-auto">
-        <div class="card rounded-0 border-0 text-center shadow">
+        <div class="card rounded-0 border-0 text-center shadow-sm">
           <div class="card-header bg-white font-italic">
-            by THES
+            by <%= article.user.username if article.user %>
           </div>
           <div class="card-body">
             <h5 class="card-title"><%= link_to article.title, article_path(article), class: "text-success" %></h5>
